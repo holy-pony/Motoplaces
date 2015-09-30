@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Motoplaces</string>
+    <string name="title_activity_main">Motoplaces</string>
+    <string name="shop">Shop</string>
+    <string name="workshop">Workshop</string>
+    <string name="food">Food</string>
+    <string name="support">Support</string>
+</resources>
