@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <com.rey.material.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:fab_backgroundColor="@color/lima"
+        app:fab_radius="28dp"
+        android:elevation="12dp"
+        android:layout_marginRight="24dp"
+        android:layout_alignParentRight="true"
+        android:id="@+id/select_food" />
+    <com.rey.material.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:fab_backgroundColor="@color/golden_bell"
+        app:fab_radius="28dp"
+        android:elevation="12dp"
+        android:layout_marginRight="24dp"
+        android:layout_alignParentRight="true"
+        android:id="@+id/select_shop" />
+    <com.rey.material.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:fab_backgroundColor="@color/ultramarine_blue"
+        app:fab_radius="28dp"
+        android:elevation="12dp"
+        android:layout_marginRight="24dp"
+        android:layout_alignParentRight="true"
+        android:id="@+id/select_workshop" />
+
+</LinearLayout>
