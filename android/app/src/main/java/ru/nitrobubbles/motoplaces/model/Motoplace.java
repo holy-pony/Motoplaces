@@ -1,14 +1,17 @@
 package ru.nitrobubbles.motoplaces.model;
 
-import com.mapbox.mapboxsdk.geometry.LatLng;
+
+import com.google.android.gms.maps.model.LatLng;
+
+import java.io.Serializable;
 
 /**
  * Created by konstantinaksenov on 30.09.15.
  */
-public class Motoplace {
+public class Motoplace implements Serializable{
     private int id;
     private double lat, lng;
-    private String title, subscription, address, site;
+    private String title, subscription, address, site, phone;
     private PlaceType[] placeTypes;
 
     public Motoplace(int id) {
@@ -22,8 +25,8 @@ public class Motoplace {
     }
 
     public Motoplace setLatLng(LatLng latLng){
-        lat = latLng.getLatitude();
-        lng = latLng.getLongitude();
+        lat = latLng.latitude;
+        lng = latLng.longitude;
         return this;
     }
 

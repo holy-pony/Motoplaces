@@ -5,4 +5,5 @@
     <string name="workshop">Workshop</string>
     <string name="food">Food</string>
     <string name="support">Support</string>
+    <string name="add_point">Add new place</string>
 </resources>
