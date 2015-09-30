@@ -6,3 +6,9 @@
 /build
 /captures
 /gradle
+/app/app.iml
+android.iml
+/app/proguard-rules.pro
+/gradlew
+gradlew.bat
+settings.gradle
