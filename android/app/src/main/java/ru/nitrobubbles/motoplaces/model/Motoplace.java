@@ -2,13 +2,14 @@ package ru.nitrobubbles.motoplaces.model;
 
 
 import com.google.android.gms.maps.model.LatLng;
+import com.google.maps.android.clustering.ClusterItem;
 
 import java.io.Serializable;
 
 /**
  * Created by konstantinaksenov on 30.09.15.
  */
-public class Motoplace implements Serializable{
+public class Motoplace implements Serializable, ClusterItem {
     private int id;
     private double lat, lng;
     private String title, subscription, address, site, phone;
@@ -18,13 +19,13 @@ public class Motoplace implements Serializable{
         this.id = id;
     }
 
-    public Motoplace setLatLng(double lat, double lng){
+    public Motoplace setLatLng(double lat, double lng) {
         this.lat = lat;
         this.lng = lng;
         return this;
     }
 
-    public Motoplace setLatLng(LatLng latLng){
+    public Motoplace setLatLng(LatLng latLng) {
         lat = latLng.latitude;
         lng = latLng.longitude;
         return this;
@@ -59,7 +60,7 @@ public class Motoplace implements Serializable{
         return id;
     }
 
-    public LatLng getLatLng(){
+    public LatLng getLatLng() {
         return new LatLng(lat, lng);
     }
 
@@ -81,5 +82,10 @@ public class Motoplace implements Serializable{
 
     public PlaceType[] getPlaceTypes() {
         return placeTypes;
+    }
+
+    @Override
+    public LatLng getPosition() {
+        return getLatLng();
     }
 }

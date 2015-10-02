@@ -5,13 +5,11 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 
 import com.mikepenz.google_material_typeface_library.GoogleMaterial;
 import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialdrawer.DrawerBuilder;
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
-import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 
 import butterknife.ButterKnife;
 import ru.nitrobubbles.motoplaces.fragments.AddNewPlaceFragment;
@@ -36,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
                 .withActivity(this)
                 .withToolbar(toolbar)
                 .withActionBarDrawerToggle(true)
-                .withStatusBarColor(getResources().getColor(R.color.primaryDark))
+                .withStatusBarColor(getResources().getColor(R.color.primary_dark_material_dark))
 /*                .withHeader(R.layout.drawer_header)*/
                 .addDrawerItems(
                         new PrimaryDrawerItem()
@@ -57,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void init() {
-      fragmentManager.beginTransaction().replace(R.id.fragment_container, new MotoplacesMapFragment()).commit();
+        fragmentManager.beginTransaction().replace(R.id.fragment_container, new MotoplacesMapFragment()).commit();
     }
 
     @Override

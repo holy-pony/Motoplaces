@@ -23,7 +23,7 @@ public class SharedPreferencesManager {
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(App.getInstance());
     }
 
-    public void setLastCameraPosition(CameraPosition cameraPosition){
+    public void setLastCameraPosition(CameraPosition cameraPosition) {
         sharedPreferences.edit()
                 .putFloat("lat", (float) cameraPosition.target.latitude)
                 .putFloat("lng", (float) cameraPosition.target.longitude)
@@ -31,11 +31,11 @@ public class SharedPreferencesManager {
                 .commit();
     }
 
-    public CameraPosition getLastCameraPosition(){
+    public CameraPosition getLastCameraPosition() {
         double lat = sharedPreferences.getFloat("lat", 0f);
         double lng = sharedPreferences.getFloat("lng", 0f);
         float zoom = sharedPreferences.getFloat("zoom", 0f);
-        CameraPosition cameraPosition = new CameraPosition(new LatLng(lat, lng), zoom, 0 , 0);
+        CameraPosition cameraPosition = new CameraPosition(new LatLng(lat, lng), zoom, 0, 0);
         return cameraPosition;
     }
 }

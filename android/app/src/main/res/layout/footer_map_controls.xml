@@ -28,7 +28,6 @@
         app:fab_backgroundColor="@color/ultramarine_blue"
         app:fab_radius="28dp"
         android:elevation="12dp"
-        android:layout_marginRight="24dp"
         android:layout_alignParentRight="true"
         android:id="@+id/select_workshop" />
 
