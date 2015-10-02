@@ -19,7 +19,7 @@ import ru.nitrobubbles.motoplaces.model.Motoplace;
  * Created by konstantinaksenov on 30.09.15.
  */
 public class InfoFooterFragment extends Fragment {
-    Motoplace motoplace;
+    private Motoplace motoplace;
 
     @Bind(R.id.title_text)
     TextView titleText;
@@ -45,5 +45,4 @@ public class InfoFooterFragment extends Fragment {
         Animation a = AnimationUtils.loadAnimation(getActivity(), R.anim.slide_in_footer);
         return a;
     }
-
 }

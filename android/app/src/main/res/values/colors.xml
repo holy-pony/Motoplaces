@@ -6,4 +6,11 @@
     <color name="lima">#7CC127</color>
     <color name="golden_bell">#F18A10</color>
     <color name="ultramarine_blue">#356BEF</color>
+    <color name="primary_material_light_1">#9c1f1f</color>
+    <color name="primary_material_light_2">#ff9800</color>
+    <color name="primary_material_dark">#ff9800</color>
+    <color name="primary_dark_material_dark">#a5590b</color>
+    <color name="accent_material_dark">#ffab00</color>
+    <color name="foreground_material_dark">#7b2e2e</color>
+    <color name="black">#401b00</color>
 </resources>
