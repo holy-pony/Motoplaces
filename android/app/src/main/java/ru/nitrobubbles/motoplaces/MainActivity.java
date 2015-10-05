@@ -19,7 +19,7 @@ import ru.nitrobubbles.motoplaces.fragments.MotoplacesMapFragment;
 public class MainActivity extends AppCompatActivity {
     Drawer drawer;
     FragmentManager fragmentManager;
-
+    MotoplacesMapFragment motoplacesMapFragment;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void init() {
-        fragmentManager.beginTransaction().replace(R.id.fragment_container, new MotoplacesMapFragment()).commit();
+        fragmentManager.beginTransaction().replace(R.id.fragment_container, motoplacesMapFragment = new MotoplacesMapFragment()).commit();
     }
 
     @Override
@@ -71,10 +71,11 @@ public class MainActivity extends AppCompatActivity {
                 FragmentManager childFm = frag.getChildFragmentManager();
                 if (childFm.getBackStackEntryCount() > 0) {
                     childFm.popBackStack();
-                    return;
                 }
             }
         }
-        super.onBackPressed();
+
+        if(motoplacesMapFragment.zoomStoreIsEmpty())
+            super.onBackPressed();
     }
 }
