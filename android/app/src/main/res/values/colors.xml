@@ -13,4 +13,5 @@
     <color name="accent_material_dark">#ffab00</color>
     <color name="foreground_material_dark">#7b2e2e</color>
     <color name="black">#401b00</color>
+    <color name="hint_gray">#909090</color>
 </resources>

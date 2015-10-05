@@ -38,4 +38,17 @@ public class SharedPreferencesManager {
         CameraPosition cameraPosition = new CameraPosition(new LatLng(lat, lng), zoom, 0, 0);
         return cameraPosition;
     }
+
+    public void setMyPosition(LatLng latLng) {
+        sharedPreferences.edit()
+                .putFloat("my_lat", (float) latLng.latitude)
+                .putFloat("my_lng", (float) latLng.longitude)
+                .commit();
+    }
+
+    public LatLng getMyPosition() {
+        double lat = sharedPreferences.getFloat("my_lat", 0f);
+        double lng = sharedPreferences.getFloat("my_lng", 0f);
+        return new LatLng(lat, lng);
+    }
 }
