@@ -28,15 +28,16 @@
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp">
+            android:layout_marginTop="16dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:id="@+id/composite_layout">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="New Text"
                 android:id="@+id/title_text"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
                 android:textSize="24sp"
                 style="@style/AppTheme.TextStyle"
                 android:layout_marginTop="12dp" />
@@ -45,8 +46,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/subtitle_text"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
                 android:textSize="14sp"
                 style="@style/AppTheme.TextStyle"
                 android:textColor="@color/hint_gray" />
@@ -54,9 +53,7 @@
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp">
+                android:layout_height="match_parent">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -69,23 +66,6 @@
                     android:textSize="16dp" />
             </LinearLayout>
 
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text="Large Text"
-                    android:id="@+id/web_address"
-                    style="@style/AppTheme.TextStyle"
-                    android:textSize="16dp" />
-            </LinearLayout>
-
         </LinearLayout>
     </RelativeLayout>
     </android.support.v7.widget.CardView>
@@ -93,9 +73,9 @@
     <com.rey.material.widget.FloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:fab_backgroundColor="@color/ultramarine_blue"
-        app:fab_radius="28dp"
-        app:fab_src="@drawable/ic_local_phone_white_48dp"
+        card_view:fab_backgroundColor="@color/ultramarine_blue"
+        card_view:fab_radius="28dp"
+        card_view:fab_iconSrc="@drawable/ic_navigation_white_48dp"
         android:elevation="12dp"
         android:layout_marginRight="24dp"
         android:layout_alignParentRight="true"

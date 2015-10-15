@@ -2,11 +2,28 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent">
 
-    <fragment
-        class="com.google.android.gms.maps.SupportMapFragment"
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/map"/>
+        android:id="@+id/map_container"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:background="#90000000"
+        android:id="@+id/search_layout">
+
+        <MultiAutoCompleteTextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/search_edittext"
+            android:hint="@string/abc_search_hint"
+            android:drawableLeft="@drawable/ic_search_white_24dp"
+            android:popupBackground="#0FFF"
+            android:singleLine="true"
+            />
+    </FrameLayout>
 
     <FrameLayout
         android:orientation="vertical"

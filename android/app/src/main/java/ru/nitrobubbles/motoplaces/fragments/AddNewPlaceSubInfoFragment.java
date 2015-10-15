@@ -6,6 +6,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 
 import butterknife.ButterKnife;
 import ru.nitrobubbles.motoplaces.R;
@@ -26,5 +28,11 @@ public class AddNewPlaceSubInfoFragment extends Fragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+    }
+
+    @Override
+    public Animation onCreateAnimation(int transit, boolean enter, int nextAnim) {
+        Animation a = AnimationUtils.loadAnimation(getActivity(), R.anim.slide_right_to_left);
+        return a;
     }
 }

@@ -2,6 +2,7 @@ package ru.nitrobubbles.motoplaces.support;
 
 import android.location.Address;
 import android.location.Geocoder;
+import android.location.Location;
 
 import com.google.android.gms.maps.model.LatLng;
 
@@ -34,5 +35,12 @@ public class GeoSupport {
                 }
             }
         });
+    }
+
+    public static Location latLngToLocation(LatLng latLng){
+        Location location = new Location("newloc");
+        location.setLongitude(latLng.longitude);
+        location.setLatitude(latLng.latitude);
+        return location;
     }
 }

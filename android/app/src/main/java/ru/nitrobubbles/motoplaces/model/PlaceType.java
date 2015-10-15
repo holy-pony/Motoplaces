@@ -14,7 +14,9 @@ public enum PlaceType {
     @SerializedName("workshop")
     WORKSHOP(App.getInstance().getString(R.string.workshop), R.drawable.workshop_marker),
     @SerializedName("food")
-    FOOD(App.getInstance().getString(R.string.food), R.drawable.food_marker);
+    FOOD(App.getInstance().getString(R.string.food), R.drawable.food_marker),
+    @SerializedName("meeting")
+    MEETING(App.getInstance().getString(R.string.meeting), R.drawable.moto_marker);
 
     PlaceType(String title, int iconId) {
         this.title = title;
