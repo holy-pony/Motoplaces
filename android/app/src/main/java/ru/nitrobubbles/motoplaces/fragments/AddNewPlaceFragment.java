@@ -107,12 +107,11 @@ public class AddNewPlaceFragment extends Fragment implements GoogleMap.OnCameraC
 
     @OnClick(R.id.next_step)
     void showSubInfoLayout() {
-        fragmentManager.popBackStack();
         Bundle bundle = new Bundle();
         bundle.putString("address", address);
         Fragment fragment = new AddNewPlaceSubInfoFragment();
         fragment.setArguments(bundle);
-        fragmentManager.beginTransaction().replace(R.id.bottom_container, fragment).addToBackStack(null).commit();
+        fragmentManager.beginTransaction().replace(R.id.subinfo_container, fragment).addToBackStack(null).commit();
 
     }
 }

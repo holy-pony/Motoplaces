@@ -14,6 +14,7 @@ import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import butterknife.ButterKnife;
 import ru.nitrobubbles.motoplaces.fragments.AddNewPlaceFragment;
 import ru.nitrobubbles.motoplaces.fragments.MotoplacesMapFragment;
+import ru.nitrobubbles.motoplaces.fragments.SearchPlaceFragment;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -37,6 +38,17 @@ public class MainActivity extends AppCompatActivity {
                 .withStatusBarColor(getResources().getColor(R.color.primary_dark_material_dark))
 /*                .withHeader(R.layout.drawer_header)*/
                 .addDrawerItems(
+                        new PrimaryDrawerItem()
+                                .withName(R.string.search_place)
+                                .withIcon(GoogleMaterial.Icon.gmd_search)
+                                .withOnDrawerItemClickListener((view, i, iDrawerItem) -> {
+                                    fragmentManager
+                                            .beginTransaction()
+                                            .replace(R.id.fragment_container, new SearchPlaceFragment())
+                                            .addToBackStack(null)
+                                            .commit();
+                                    return false;
+                                }),
                         new PrimaryDrawerItem()
                                 .withName(R.string.add_point)
                                 .withIcon(GoogleMaterial.Icon.gmd_add_circle_outline)
@@ -67,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
     public void onBackPressed() {
         FragmentManager fm = getSupportFragmentManager();
         for (Fragment frag : fm.getFragments()) {
+            if(frag != null)
             if (frag.isVisible()) {
                 FragmentManager childFm = frag.getChildFragmentManager();
                 if (childFm.getBackStackEntryCount() > 0) {

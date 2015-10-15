@@ -7,4 +7,15 @@
     <string name="support">Support</string>
     <string name="add_point">Add new place</string>
     <string name="unknown_address">Unknown address</string>
+    <string name="meeting">Meeting</string>
+    <string name="search_place">Search</string>
+    <string name="monday">Mon</string>
+    <string name="tuesday">Tue</string>
+    <string name="wensday">Wen</string>
+    <string name="thursday">Thu</string>
+    <string name="friday">Fri</string>
+    <string name="sunday">Sun</string>
+    <string name="saturday">Sat</string>
+    <string name="web">Web</string>
+    <string name="worked_days">Worked days</string>
 </resources>
