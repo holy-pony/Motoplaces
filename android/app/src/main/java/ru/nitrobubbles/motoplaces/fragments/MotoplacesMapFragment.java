@@ -43,6 +43,7 @@ import ru.nitrobubbles.motoplaces.R;
 import ru.nitrobubbles.motoplaces.adapters.SearchTextAdapter;
 import ru.nitrobubbles.motoplaces.model.MockMotoplaces;
 import ru.nitrobubbles.motoplaces.model.Motoplace;
+import ru.nitrobubbles.motoplaces.storage.MotoplacesStorage;
 import ru.nitrobubbles.motoplaces.support.MotoplaceMapRender;
 import ru.nitrobubbles.motoplaces.support.SharedPreferencesManager;
 import ru.nitrobubbles.motoplaces.support.animation.AnimationSupport;
@@ -107,12 +108,11 @@ public class MotoplacesMapFragment extends Fragment implements ClusterManager.On
     }
 
     void setupDots() {
-        HashMap<String, Motoplace> hashMap =new HashMap<>();
-        for (Motoplace motoplace : MockMotoplaces.getMockMotoplace()) {
+        for (Motoplace motoplace : MotoplacesStorage.getInstance().getMotoplaces()) {
             clusterManager.addItem(motoplace);
         }
         clusterManager.cluster();
-        SearchTextAdapter adapter = new SearchTextAdapter(getActivity(), MockMotoplaces.getMockMotoplace());
+        SearchTextAdapter adapter = new SearchTextAdapter(getActivity(), MotoplacesStorage.getInstance().getMotoplaces());
         searchEdit.setTokenizer(new MultiAutoCompleteTextView.CommaTokenizer());
         searchEdit.setAdapter(adapter);
         searchEdit.setOnItemClickListener((adapterView, view, i, l) -> {
