@@ -11,10 +11,17 @@ import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialdrawer.DrawerBuilder;
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 
+import java.util.ArrayList;
+
 import butterknife.ButterKnife;
 import ru.nitrobubbles.motoplaces.fragments.AddNewPlaceFragment;
 import ru.nitrobubbles.motoplaces.fragments.MotoplacesMapFragment;
 import ru.nitrobubbles.motoplaces.fragments.SearchPlaceFragment;
+import ru.nitrobubbles.motoplaces.model.Motoplace;
+import ru.nitrobubbles.motoplaces.storage.MotoplacesStorage;
+import rx.Observable;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.functions.Action1;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -67,7 +74,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void init() {
-        fragmentManager.beginTransaction().replace(R.id.fragment_container, motoplacesMapFragment = new MotoplacesMapFragment()).commit();
+        loadMotoplaces()
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(motoplaces -> {
+                    MotoplacesStorage.getInstance().setMotoplaces(motoplaces);
+                    fragmentManager.beginTransaction().replace(R.id.fragment_container, motoplacesMapFragment = new MotoplacesMapFragment()).commit();
+                });
     }
 
     @Override
@@ -90,5 +102,9 @@ public class MainActivity extends AppCompatActivity {
 
         if(motoplacesMapFragment.zoomStoreIsEmpty())
             super.onBackPressed();
+    }
+
+    private Observable<ArrayList<Motoplace>> loadMotoplaces(){
+        return Observable.just(new ArrayList<>());
     }
 }

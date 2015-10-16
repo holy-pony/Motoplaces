@@ -71,7 +71,7 @@ public class InfoFooterFragment extends Fragment {
             compositeLayout.addView(buildContainer(getString(R.string.web), motoplace.getSite()));
         }
 
-        if(motoplace.getWorkedDays().length > 0 ){
+        if(motoplace.getWorkedDays()!= null && motoplace.getWorkedDays().length > 0 ){
             StringBuilder stringBuilder = new StringBuilder();
             String prefix = "";
             for(Day day : motoplace.getWorkedDays()){
